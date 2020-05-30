@@ -1,6 +1,10 @@
 package br.unitins.check_net.application;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.management.ManagementFactory;
 
 import com.sun.management.OperatingSystemMXBean;
@@ -59,6 +63,26 @@ public abstract class OperationalComponents {
 
 	public static long getMemoryFreePercent() {
 		return 100 * getMemoryFreeSize() / getMemoryTotalSize();
+	}
+
+	public static String getRunningProcess(String path) {
+		String result = "";
+		try {
+			String cmds[] = { "cmd", path, "tasklist" };
+			Process proc = Runtime.getRuntime().exec(cmds);
+
+			InputStream inputstream = proc.getInputStream();
+			BufferedReader bufferedreader = new BufferedReader(new InputStreamReader(inputstream));
+
+			String line;
+
+			while ((line = bufferedreader.readLine()) != null) {
+				result += line + "\n";
+			} 
+		} catch (IOException e) {
+			return "\tErro ao processar solicitação: " + e.toString();
+		}
+		return result;
 	}
 
 	// demais verificacoes

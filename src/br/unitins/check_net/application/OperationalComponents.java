@@ -82,11 +82,23 @@ public abstract class OperationalComponents {
 
 			while ((line = bufferedreader.readLine()) != null) {
 				result += line + "\n";
-			} 
+			}
 		} catch (IOException e) {
 			return "\tErro ao processar solicitação: " + e.toString();
 		}
 		return result;
+	}
+
+	public static String getNetBoard() {
+		try {
+			InetAddress localHost = InetAddress.getLocalHost();
+			NetworkInterface networkInterface = NetworkInterface.getByInetAddress(localHost);
+			return networkInterface.getDisplayName();
+		} catch (UnknownHostException e) {
+			return "\tErro ao processar solicitação: " + e.toString();
+		} catch (SocketException e) {
+			return "\tErro ao processar solicitação: " + e.toString();
+		}
 	}
 
 	// demais verificacoes
@@ -101,10 +113,4 @@ public abstract class OperationalComponents {
 		return mxBean;
 	}
 
-	public static String getMotherBoard() throws UnknownHostException, SocketException {
-		InetAddress localHost = InetAddress.getLocalHost();
-		NetworkInterface networkInterface = NetworkInterface.getByInetAddress(localHost);
-		return networkInterface.getDisplayName();
-	}
-	
 }

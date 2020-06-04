@@ -6,6 +6,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.management.ManagementFactory;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 import com.sun.management.OperatingSystemMXBean;
 
@@ -97,4 +101,10 @@ public abstract class OperationalComponents {
 		return mxBean;
 	}
 
+	public static String getMotherBoard() throws UnknownHostException, SocketException {
+		InetAddress localHost = InetAddress.getLocalHost();
+		NetworkInterface networkInterface = NetworkInterface.getByInetAddress(localHost);
+		return networkInterface.getDisplayName();
+	}
+	
 }

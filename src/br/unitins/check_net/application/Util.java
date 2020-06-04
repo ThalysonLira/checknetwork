@@ -1,8 +1,11 @@
 package br.unitins.check_net.application;
 
+import java.net.SocketException;
+import java.net.UnknownHostException;
+
 public class Util {
 	
-	public static void main(String args[]) {
+	public static void main(String args[]) throws UnknownHostException, SocketException {
 		
 		// Componentes operacionais
 		System.out.println("\nSistema operacional: " + OperationalComponents.getOperationalSystem());
@@ -16,7 +19,7 @@ public class Util {
 		System.out.println("IP interno: " + NetworkPing.getIpInternal());
 		System.out.println("Host: " + NetworkPing.getHostName());
 		System.out.println("IP externo: " + NetworkPing.getIpExternal());
-		
+		System.out.println("Placa: " + OperationalComponents.getMotherBoard());		
 	}
 	
 }

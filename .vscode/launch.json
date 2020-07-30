@@ -1,0 +1,26 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Main",
+			"request": "launch",
+			"vmArgs": "--module-path C:/dev/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
+			"mainClass": "br.unitins.check_net.Util",
+			"projectName": "check_net"
+		},
+		{
+			"type": "java",
+			"name": "Debug (Launch) - Current File",
+			"request": "launch",
+			"mainClass": "${file}"
+		},
+		{
+			"type": "java",
+			"name": "Debug (Launch)-Util<check_network>",
+			"request": "launch",
+			"mainClass": "br.unitins.check_net.application.Util",
+			"projectName": "check_network"
+		}
+	]
+}

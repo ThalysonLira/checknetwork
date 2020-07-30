@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MaquinaController">
+   <children>
+      <Label layoutX="58.0" layoutY="62.0" prefWidth="140.0" text="Sistema Operacional:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="47.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfOS" editable="false" layoutX="196.0" layoutY="48.0" prefHeight="25.0" prefWidth="205.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="45.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="30.0" layoutY="93.0" prefWidth="140.0" text="Espaço livre (C):" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="93.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfHDlivre" editable="false" layoutX="215.0" layoutY="94.0" prefHeight="25.0" prefWidth="205.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="90.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="30.0" layoutY="138.0" prefWidth="140.0" text="Espaço livre (%):" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="138.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfHDPorc" editable="false" layoutX="308.0" layoutY="155.0" prefHeight="25.0" prefWidth="205.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="135.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="30.0" layoutY="183.0" prefWidth="140.0" text="Memória RAM livre:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="183.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfRAMlivre" editable="false" layoutX="226.0" layoutY="194.0" prefHeight="25.0" prefWidth="205.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="180.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="30.0" layoutY="273.0" prefWidth="140.0" text="Placa de rede:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="273.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfRAMocupada" editable="false" layoutX="226.0" layoutY="251.0" prefHeight="25.0" prefWidth="205.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="225.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="30.0" layoutY="228.0" prefWidth="140.0" text="Memória RAM ocup:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="228.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfPlacaRede" editable="false" layoutX="216.0" layoutY="313.0" prefHeight="25.0" prefWidth="205.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="270.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="30.0" layoutY="318.0" prefWidth="140.0" text="Processos em execução:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taProcessos" editable="false" layoutX="180.0" layoutY="318.0" prefHeight="260.0" prefWidth="460.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="315.0" />
+      <HBox alignment="CENTER" layoutX="314.0" layoutY="593.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#search" text="Analisar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
